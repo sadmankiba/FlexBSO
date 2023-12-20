@@ -1,0 +1,8 @@
+*.o
+hello_bdev
+*.txt
+compress_size
+input_file*
+output_file*
+doca_compression_local
+doca_compression_local.p/

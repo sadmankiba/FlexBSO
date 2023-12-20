@@ -1,0 +1,64 @@
+{
+    "subsystems": [
+	{
+	    "subsystem": "bdev",
+	    "config": [
+		{
+		    "method": "bdev_malloc_create",
+		    "params": {
+			"block_size": 512,
+			"num_blocks": 262144,
+			"name": "Malloc0"
+		    }
+		},
+		{
+		    "method": "bdev_malloc_create",	    
+		    "params": {
+			"block_size": 512,
+			"num_blocks": 262144,
+			"name": "Malloc1"
+		    }
+		},
+		{
+		    "method": "bdev_malloc_create",	    
+		    "params": {
+			"block_size": 512,
+			"num_blocks": 262144,
+			"name": "Malloc2"
+		    }
+		},
+		{
+		    "method": "bdev_malloc_create",	    
+		    "params": {
+			"block_size": 512,
+			"num_blocks": 262144,
+			"name": "Malloc3"
+		    }
+		},
+		{
+		    "method": "bdev_malloc_create",	    
+		    "params": {
+			"block_size": 512,
+			"num_blocks": 262144,
+			"name": "Malloc4"
+		    }
+		},	
+		{
+		    "method": "bdev_raid_create",
+		    "params": {
+			"name": "Raid5",
+			"strip_size_kb": 64,
+			"raid_level": "raid5f",
+			"base_bdevs": [
+			    "Malloc0",
+			    "Malloc1",
+			    "Malloc2",
+			    "Malloc3",
+			    "Malloc4"
+			]
+		    }
+		}
+	    ]
+	}
+    ]
+}
